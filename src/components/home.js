@@ -133,9 +133,9 @@ class Home extends Component {
         </div>
       </div>
      </div>
-    <div className="image">
+{/*     <div className="image">
       <img width="100%" src={image}></img>
-    </div>
+    </div> */}
         </div>
     );
   }

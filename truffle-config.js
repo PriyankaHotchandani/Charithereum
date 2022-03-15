@@ -5,7 +5,7 @@ const fs = require('fs');
 
 const gasPriceTestnetRaw = fs.readFileSync(".gas-price-testnet.json").toString().trim();
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-const kovanUrl = process.env.KOVAN_URL;
+const ropstenUrl = process.env.ROPSTEN_URL;
 const privateKey = process.env.PRIVATE_KEY
 
 const gasPriceTestnet = parseInt(JSON.parse(gasPriceTestnetRaw).result, 16);
@@ -20,7 +20,7 @@ module.exports = {
       port: 4444,
       network_id: "*" // Match any network id
     },
-    kovan: {
+    /* kovan: {
       provider: function() {
         return new HDWalletProvider(
           [privateKey],
@@ -28,6 +28,15 @@ module.exports = {
         )
       },
       network_id: 42
+    }, */
+    ropsten: {
+      provider: function() {
+        return new HDWalletProvider(
+          [privateKey],
+          ropstenUrl
+        )
+      },
+      network_id: 3
     },
     testnet: {
       provider: function() {

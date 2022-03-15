@@ -1,4 +1,4 @@
-const CharityToken = artifacts.require("CharityToken")
+var CharityToken = artifacts.require("../src/contracts/CharityToken.sol")
 //const CharityTokenSale = artifacts.require("CharityTokenSale")
 
 module.exports = function(deployer) {
