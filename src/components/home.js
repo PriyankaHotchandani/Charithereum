@@ -107,13 +107,13 @@ class Home extends Component {
                 retina_detect: true,
               }} />
      <div className="container">
-      {/*<h1 className="head">DeDonate</h1>*/}
+      {/*<h1 className="head">Charithereum</h1>*/}
 
       <div className="main-home container">
         <div className="row sub-head">
           <div className="col main-content">
-            <h4 className="content1"><span className="brand-highlight">DeDonate</span> is a decentralized platform for donation via the <strong>Ethereum</strong> blockchain. It allows people to donate to peers directly thus removing the frauds and faulty corrupted middleman and keeping the donation related activity anonymous!!</h4>
-            <h3 className="content2">It allows charitable organizations to raise funds for their charitable activity through Ethereum blockchain.</h3>
+            <h4 className="content1"><span className="brand-highlight">Charithereum</span> is a decentralized platform for donation via the <strong>Ethereum</strong> blockchain. It allows people to donate to peers directly thus removing the frauds and faulty corrupted middleman and keeping the donation related activity anonymous.</h4>
+            <h4 className="content2">It allows charitable organizations to raise funds for their activities and events through Ethereum blockchain.</h4>
           </div>
         </div>
         {/*<div className="row metamask-btn">*/}

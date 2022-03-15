@@ -162,8 +162,9 @@ class CharityRequest extends Component {
      <div className="container">
        <div className="back">
        <div className="" id="request">
-        <h4 className="form-head">Are you talented & Looking for donations?</h4>
-        <h5 className="form-subhead">Provide us your details and let us give you the chance to meet your donors!!</h5>
+        {/* <h4 className="form-head">Are you talented & Looking for donations?</h4> */}
+        <h5 className="form-subhead">Provide your details and get the chance to meet your donors!</h5>
+        <br></br>
         <Nav tabs>
            <NavItem>
              <NavLink type="button "
@@ -290,7 +291,7 @@ class CharityRequest extends Component {
                   Upload your image posted on any social media
                 </FormText>
               </FormGroup>
-              <Button className="form-btn" type="submit" value="submit" color="primary">Submit</Button>
+              <Button className="form-btn" type="submit" value="submit" color="primary" margin="-2px">Submit</Button>
             </Form>
           </TabPane>
           <TabPane tabId="3">

@@ -27,7 +27,7 @@ class NavBar extends Component {
                     <div className="container">
                     <NavbarToggler dark onClick={this.toggleNav} />
                     <NavbarBrand className="mr-auto nav-brand" href="/home">
-                        <span className="branding">DeDonate</span>
+                        <span className="branding">Charithereum</span>
                     </NavbarBrand>
                     <Collapse isOpen={this.state.isNavOpen} navbar className="">
                         <div className="flex-grow-1"></div>
