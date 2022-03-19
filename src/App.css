@@ -4,8 +4,6 @@
 body,html {
   background-color: white;
   margin: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 /*navbar */
@@ -53,7 +51,7 @@ body,html {
   padding-bottom: 10px !important;
   border-radius: 50px !important;
   width: 200px;
-  background-color: #ff8c0010 !important;
+  background-color: #301c04 !important;
   border: 1px solid darkorange !important;
   cursor: pointer !important;
   color: darkorange !important;
@@ -72,7 +70,12 @@ body,html {
 
 #root {
   background-image: url('https://images.pexels.com/photos/6646940/pexels-photo-6646940.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
-;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h4{
+  text-align: justify;
 }
 
 /* Explore */
