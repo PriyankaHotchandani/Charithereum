@@ -5,6 +5,10 @@ body,html {
   background-color: white;
   margin: 0;
 }
+ 
+h6{
+  color: #ff831f !important;
+}
 
 /*navbar */
 .top-navbar{

@@ -167,11 +167,11 @@ class CharityRequest extends Component {
         <br></br>
         <Nav tabs>
            <NavItem>
-             <NavLink type="button "
+             <NavLink type="button"
                       className={classnames({ active: this.state.activeTab === '1' })}
                       onClick={() => { this.toggle('1'); }}
              >
-               Peer To Peer
+               <h6>Peer To Peer</h6>
              </NavLink>
            </NavItem>
            <NavItem>
@@ -179,7 +179,7 @@ class CharityRequest extends Component {
                 className={classnames({ active: this.state.activeTab === '2' })}
                 onClick={() => { this.toggle('2'); }}
              >
-               Charity
+               <h6>Charity</h6>
              </NavLink>
            </NavItem>
            <NavItem>
@@ -187,7 +187,7 @@ class CharityRequest extends Component {
                 className={classnames({ active: this.state.activeTab === '3' })}
                 onClick={() => { this.toggle('3'); }}
              >
-               Approve Token
+               <h6>Approve Token</h6>
              </NavLink>
            </NavItem>
            <NavItem>
@@ -195,7 +195,7 @@ class CharityRequest extends Component {
                 className={classnames({ active: this.state.activeTab === '4' })}
                 onClick={() => { this.toggle('4'); }}
              >
-               Donate To Charity
+                  <h6>Donate To Charity</h6>
              </NavLink>
            </NavItem>
          </Nav>
@@ -214,33 +214,34 @@ class CharityRequest extends Component {
               <FormGroup>
                 <Label htmlFor="name" className="form-label">Full Name</Label>
                 <Input type="text" id="requestName"
-                  innerRef={(input) => this.requestName = input} placeholder="Enter your name here"
+                  innerRef={(input) => this.requestName = input} placeholder="Name"
                 />
               </FormGroup>
               <FormGroup>
                 <Label htmlFor="criteria" className="form-label">Criteria</Label>
                 <Input type="select" name="criteria" id="requestCategory"
-                       innerRef={(input) => this.requestCategory = input}>
+                      innerRef={(input) => this.requestCategory = input} placeholder="Select Criteria">
+                  <option> </option>
                   <option>Education</option>
                   <option>Sports</option>
                   <option>Others</option>
                 </Input>
               </FormGroup>
               <FormGroup>
-                <Label htmlFor="story" className="form-label">Tell us about yourself</Label>
+                <Label htmlFor="story" className="form-label">Need For Donation</Label>
                 <Input type="textarea" rows={3} columns={50} name="story" id="requestStory"
-                       innerRef={(input) => this.requestStory = input} placeholder="Describe in short why you need this" maxLength={200}
+                       innerRef={(input) => this.requestStory = input} placeholder="Description" maxLength={200}
                 />
               </FormGroup>
               <FormGroup>
                 <Label htmlFor="story" className="form-label">Donation Amount</Label>
                 <Input type="text" rows={3} columns={50} name="story" id="requestPrice"
-                       innerRef={(input) => this.requestPrice = input} placeholder="amount"
+                       innerRef={(input) => this.requestPrice = input} placeholder="Amount"
                 />
               </FormGroup>
               <FormGroup>
                 <Label htmlFor="exampleFile" className="form-label">Image Url</Label>
-                <Input type="text" name="photo" id="requestImage" innerRef={(input) => this.requestImage = input} placeholder="image"/>
+                <Input type="text" name="photo" id="requestImage" innerRef={(input) => this.requestImage = input} placeholder="Image"/>
                 <FormText color="muted">
                   Upload your image posted on any social media
                 </FormText>
@@ -262,31 +263,29 @@ class CharityRequest extends Component {
               <FormGroup>
                 <Label htmlFor="name" className="form-label">Charity Name</Label>
                 <Input type="text" id="requestName" name="name"
-                    innerRef={(input) => this.requestName = input} placeholder="Enter charity name here"
+                    innerRef={(input) => this.requestName = input} placeholder="Name of the Organisation"
                 />
               </FormGroup>
               <FormGroup>
                 <Label htmlFor="name" className="form-label">Symbol</Label>
                 <Input type="text" id="requestSymbol" name="name"
-                    innerRef={(input) => this.requestSymbol = input} placeholder="Enter desired token symbol"
+                    innerRef={(input) => this.requestSymbol = input} placeholder="Desired Token Symbol"
                 />
               </FormGroup>
               <FormGroup>
                 <Label htmlFor="name" className="form-label">Raise Goal</Label>
                 <Input type="text" id="raiseGoal" name="name"
-                    innerRef={(input) => this.raiseGoal = input} placeholder="Enter desired token symbol"
+                    innerRef={(input) => this.raiseGoal = input} placeholder="Target Amount"
                 />
               </FormGroup>
               <FormGroup>
                 <Label htmlFor="exampleFile" className="form-label">Cause</Label>
-                <Input type="text" name="photo" id="requestCause" innerRef={(input) => this.requestCause = input}/>
-                <FormText color="muted">
-                  Reason for fund raising
-                </FormText>
+                <Input type="text" name="photo" id="requestCause" innerRef={(input) => this.requestCause = input} placeholder="Reason for Fund-Raising"
+                />
               </FormGroup>
               <FormGroup>
                 <Label htmlFor="exampleFile" className="form-label">Image Url</Label>
-                <Input type="text" name="photo" id="requestImage" innerRef={(input) => this.requestImage = input} placeholder="image"/>
+                <Input type="text" name="photo" id="requestImage" innerRef={(input) => this.requestImage = input} placeholder="Image"/>
                 <FormText color="muted">
                   Upload your image posted on any social media
                 </FormText>
