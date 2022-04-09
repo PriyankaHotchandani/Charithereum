@@ -32,12 +32,12 @@ class CharityRequest extends Component {
     this.setState({ account: accounts[0] })
 
     const networkId = await web3.eth.net.getId()
-    const networkData = Donation.networks[networkId]
-    const charityNetworkData = CharityContract.networks[networkId]
+    // const networkData = Donation.networks[networkId]
+    // const charityNetworkData = CharityContract.networks[networkId]
 
-    if(networkData){
-      const donation = web3.eth.Contract(Donation.abi, networkData.address)
-      const charity = web3.eth.Contract(CharityContract.abi, charityNetworkData.address)
+    // if(networkData){
+      const donation = web3.eth.Contract(Donation, "0xBFe4B96fca08a7Bcd419fEc2d32E7Bd0dd79a8fd")
+      const charity = web3.eth.Contract(CharityContract, "0xbbD061D75eCd73f37a1bE5F813bb1cD84F4196B2")
       this.setState({ donation })
       this.setState({ charity })
 
@@ -67,9 +67,9 @@ class CharityRequest extends Component {
       this.setState({ loading: false })
       console.log('peer requests', this.state.requests);
       console.log('charityRequests', this.state.charityRequests);
-    } else {
-      window.alert("Donation contract is not deployed to detected network")
-    }
+    // } else {
+    //   window.alert("Donation contract is not deployed to detected network")
+    // }
   }
 
   async LoadCharityData(){
@@ -78,11 +78,11 @@ class CharityRequest extends Component {
     this.setState({ account: accounts[0] })
 
     const networkId = await web3.eth.net.getId()
-    const networkData = Donation.networks[networkId]
-    const charityNetworkData = CharityContract.networks[networkId]
+    // const networkData = Donation.networks[networkId]
+    // const charityNetworkData = CharityContract.networks[networkId]
 
-    if(networkData){
-      const charity = web3.eth.Contract(CharityContract.abi, charityNetworkData.address)
+    // if(networkData){
+      const charity = web3.eth.Contract(CharityContract, "0xbbD061D75eCd73f37a1bE5F813bb1cD84F4196B2")
       this.setState({ charity })
 
       const charityRequestCount = await charity.methods.charityRequestCount().call()
@@ -98,9 +98,9 @@ class CharityRequest extends Component {
       }
 
       console.log('charityRequests', this.state.charityRequests);
-    } else {
-      window.alert("Donation contract is not deployed to detected network")
-    }
+    // } else {
+    //   window.alert("Donation contract is not deployed to detected network")
+    // }
   }
 
   constructor(props){
@@ -141,7 +141,7 @@ class CharityRequest extends Component {
 
   raiseFund(name, symbol, raiseGoal, image, cause) {
     this.setState({ loading: true })
-    this.state.charity.methods.createToken(name, symbol, raiseGoal, image, cause).send({ from: this.state.account })
+    this.state.charity.methods.raiseFund(name, symbol, raiseGoal, image, cause).send({ from: this.state.account })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })

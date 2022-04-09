@@ -32,12 +32,12 @@ class CharityRequest extends Component {
     this.setState({ account: accounts[0] })
 
     const networkId = await web3.eth.net.getId()
-    const networkData = Donation.networks[networkId]
-    const charityNetworkData = CharityContract.networks[networkId]
+    // const networkData = Donation.networks[networkId]
+    // const charityNetworkData = CharityContract.networks[networkId]
 
-    if(networkData){
-      const donation = web3.eth.Contract(Donation.abi, networkData.address)
-      const charity = web3.eth.Contract(CharityContract.abi, charityNetworkData.address)
+    // if(networkData){
+      const donation = web3.eth.Contract(Donation, "0xBFe4B96fca08a7Bcd419fEc2d32E7Bd0dd79a8fd")
+      const charity = web3.eth.Contract(CharityContract, "0xbbD061D75eCd73f37a1bE5F813bb1cD84F4196B2")
       this.setState({ donation })
       this.setState({ charity })
 
@@ -67,9 +67,9 @@ class CharityRequest extends Component {
       this.setState({ loading: false })
       console.log('peer requests', this.state.requests);
       console.log('charityRequests', this.state.charityRequests);
-    } else {
-      window.alert("Donation contract is not deployed to detected network")
-    }
+    // } else {
+      // window.alert("Donation contract is not deployed to detected network")
+    // }
   }
 
 
@@ -254,7 +254,7 @@ class CharityRequest extends Component {
               event.preventDefault()
               const name = this.requestName.value
               const symbol = this.requestSymbol.value
-              const raiseGoal = this.raiseGoal.value
+              const raiseGoal = window.web3.utils.toWei(this.raiseGoal.value.toString(), 'Ether') || 0
               const cause = this.requestCause.value
               const image = this.requestImage.value
               console.log(name, symbol, raiseGoal, image, cause);
@@ -274,7 +274,7 @@ class CharityRequest extends Component {
               </FormGroup>
               <FormGroup>
                 <Label htmlFor="name" className="form-label">Raise Goal</Label>
-                <Input type="text" id="raiseGoal" name="name"
+                <Input type="text" rows={3} columns={50} id="raiseGoal" name="name"
                     innerRef={(input) => this.raiseGoal = input} placeholder="Target Amount"
                 />
               </FormGroup>
