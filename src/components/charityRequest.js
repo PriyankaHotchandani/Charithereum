@@ -141,7 +141,7 @@ class CharityRequest extends Component {
 
   raiseFund(name, symbol, raiseGoal, image, cause) {
     this.setState({ loading: true })
-    this.state.charity.methods.raiseFund(name, symbol, raiseGoal, image, cause).send({ from: this.state.account })
+    this.state.charity.methods.createToken( raiseGoal, image, cause).send({ from: this.state.account })
     .once('receipt', (receipt) => {
       this.setState({ loading: false })
     })
