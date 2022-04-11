@@ -62,7 +62,7 @@ const Explore = (props) => {
                         <img width="130px" height="130px" src={ request.image } alt="Card cap" className="card-image"/>
                         <div className="header-card-content">
                           <p className="name">Name: { request.name }</p>
-                          <p className="price">Amount: { window.web3.utils.fromWei(request.price.toString(), 'Ether') } Eth</p>
+                          <p className="price">Amount: Ether { window.web3.utils.fromWei(request.price.toString(), 'Ether') } </p>
                             {
                               !request.donated
                               ? <Button
@@ -110,8 +110,8 @@ const Explore = (props) => {
                           <div className="header-card-content">
                             <p className="name">Id: { request.id.toString() }</p>
                             <p className="name">Name: { request.name }</p>
-                            <p className="name">Amount: { request.raiseGoal.toString() } $</p>
-                            <p className="name">Amount Raised: { request.ammountRaised.toString() }</p>
+                            <p className="name">Amount: ₹{ window.web3.utils.fromWei(request.raiseGoal.toString(), 'Ether') } </p>
+                            <p className="name">Amount Raised: ₹{ request.ammountRaised.toString() }</p>
                             <p className="name">Status: { status }</p>
                             <p> Visit The Requests For Fund Raising</p>
                           </div>

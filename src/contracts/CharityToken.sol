@@ -39,14 +39,13 @@ contract CharityToken {
   mapping(address => uint256) public balanceOf;
   mapping(address => mapping(address => uint256)) public allowance;
 
-  function createToken(uint256 _initialSupply, string memory image, string memory cause) public {
-    name = 'DeDonate';
-    symbol = 'DDN';
+  function createToken(uint256 _initialSupply, string memory name, string memory symbol, string memory image, string memory cause) public {
+    tokenPrice = 245000;
+    _initialSupply /= tokenPrice;
     balanceOf[msg.sender] = _initialSupply;
     totalSupply += _initialSupply;
     raiseGoal = _initialSupply;
     charityAddress = msg.sender;
-    tokenPrice = 2700000000000000;
     charityRequestCount ++;
 
     onGoingCharity[charityRequestCount] = CharityRequest(charityRequestCount, name, symbol, _initialSupply, 0, msg.sender, true, cause, image);
@@ -80,7 +79,7 @@ contract CharityToken {
     _request.ammountRaised += value;
     balanceOf[_charityAddress] -= value;
     onGoingCharity[_id] = _request;
-    charityAmount =  multiply(2700000000000000 , value);
+    charityAmount =  multiply(245000, value); //val in ether is 245000
 
     donators[msg.sender] = value;
     transfer(msg.sender, value);
