@@ -13,10 +13,10 @@ h6{
 /*navbar */
 .top-navbar{
   padding: 0px !important;
-  background-color: papayawhip;
+  background-color: rgb(255 229 199);
 }
 .branding{
-  color: rgb(255 131 31);
+  color: rgb(107 0 0);
   font-weight: bolder;
   font-family: Georgia;
   font-size: 30px;
@@ -43,7 +43,7 @@ h6{
   margin-top: 20px;
 }
 .brand-highlight{
-  color: darkorange;
+  color: rgb(107 0 0);
   font-weight: bold;
 }
 .btn-row{
@@ -55,14 +55,14 @@ h6{
   padding-bottom: 10px !important;
   border-radius: 50px !important;
   width: 200px;
-  background-color: #301c04 !important;
-  border: 1px solid darkorange !important;
+  background-color: rgb(255 229 199) !important;
+  border: 1px solid rgb(107 0 0) !important;
   cursor: pointer !important;
-  color: darkorange !important;
+  color: rgb(107 0 0) !important;
   font-weight: bold !important;
 }
 .exp-btn1:hover{
-  background-color: darkorange !important;
+  background-color: rgb(107 0 0) !important;
   color: white !important;
 }
 .btn2{
@@ -126,12 +126,12 @@ h4{
   border-radius: 10px !important;
   width: 120px;
   background-color: #ff8c0010 !important;
-  border: 1px solid darkorange !important;
+  border: 1px solid rgb(107 0 0) !important;
   cursor: pointer !important;
-  color: darkorange !important;
+  color: rgb(107 0 0) !important;
 }
 .donate-btn:hover{
-  background-color: darkorange !important;
+  background-color: rgb(107 0 0) !important;
   color: white !important;
 }
 .body-card{

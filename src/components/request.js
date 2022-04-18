@@ -234,7 +234,7 @@ class CharityRequest extends Component {
                 />
               </FormGroup>
               <FormGroup>
-                <Label htmlFor="story" className="form-label">Donation Amount</Label>
+                <Label htmlFor="story" className="form-label">Donation Amount (in INR)</Label>
                 <Input type="text" rows={3} columns={50} name="story" id="requestPrice"
                        innerRef={(input) => this.requestPrice = input} placeholder="Amount"
                 />
@@ -273,7 +273,7 @@ class CharityRequest extends Component {
                 />
               </FormGroup>
               <FormGroup>
-                <Label htmlFor="name" className="form-label">Raise Goal</Label>
+                <Label htmlFor="name" className="form-label">Raise Goal (in INR)</Label>
                 <Input type="text" rows={3} columns={50} id="raiseGoal" name="name"
                     innerRef={(input) => this.raiseGoal = input} placeholder="Target Amount"
                 />

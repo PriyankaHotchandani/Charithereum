@@ -110,7 +110,7 @@ const Explore = (props) => {
                           <div className="header-card-content">
                             <p className="name">Id: { request.id.toString() }</p>
                             <p className="name">Name: { request.name }</p>
-                            <p className="name">Amount: ₹{ window.web3.utils.fromWei(request.raiseGoal.toString(), 'Ether') } </p>
+                            <p className="name">Amount: ₹{ window.web3.utils.fromWei((245000*request.raiseGoal).toString()) } </p>
                             <p className="name">Amount Raised: ₹{ request.ammountRaised.toString() }</p>
                             <p className="name">Status: { status }</p>
                             <p> Visit The Requests For Fund Raising</p>
