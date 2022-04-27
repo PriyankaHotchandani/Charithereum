@@ -43,7 +43,7 @@ class Main extends Component {
     // if(networkData){
     const donation = web3.eth.Contract(Donation, "0xBFe4B96fca08a7Bcd419fEc2d32E7Bd0dd79a8fd")
     console.log(donation);
-      const charity = web3.eth.Contract(CharityContract, "0x7B60447Edb12e21700aA875ED59CA27D1f6261F8")
+      const charity = web3.eth.Contract(CharityContract, "0x1d44FC6B66f3396d60f7249DE620D8c9Ef171B21")
       this.setState({ donation })
       this.setState({ charity })
 
