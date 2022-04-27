@@ -49,39 +49,38 @@ const Explore = (props) => {
                   props.requests.map((request, key) => {
                     let donator
 
-                    if (request.owner === request.donator) {
-                      console.log("c seller", true);
-                      donator = "No Donator"
-                    } else {
-                      donator = request.donator
-                    }
-                    return (
-                      <Col sm="12" md="6">
-                        <div className="custom-card">
-                          <div className="header-card">
-                            <img width="130px" height="130px" src={request.image} alt="Card cap" className="card-image" />
-                            <div className="header-card-content">
-                              <p className="name">Name: {request.name}</p>
-                              <p className="price">Amount: Ether {window.web3.utils.fromWei(request.price.toString(), 'Ether')} </p>
-                              {
-                                !request.donated
-                                  ? <Button
-                                    color="info"
-                                    className="donate-btn"
-                                    id={request.id}
-                                    value={request.price}
-                                    onClick={(event) => {
-                                      props.fullFillRequest(event.target.id, event.target.value)
-                                    }}
-                                  >
-                                    Donate Now</Button>
-                                  : null
-                              }
-                            </div>
-                          </div>
-                          <div className="body-card">
-                            <CardText>Story: {request.story}</CardText>
-                          </div>
+                if(request.owner === request.donator){
+                  console.log("c seller", true);
+                  donator = "No Donator"
+                } else {
+                  donator = request.donator
+                }
+                return(
+                  <Col sm="12" md="6">
+                    <div className="custom-card">
+                      <div className="header-card">
+                        <img width="130px" height="130px" src={ request.image } alt="Card cap" className="card-image"/>
+                        <div className="header-card-content">
+                          <p className="name">Name: { request.name }</p>
+                          <p className="price">Amount: Eth { window.web3.utils.fromWei(request.price.toString(), 'Ether') } </p>
+                            {
+                              !request.donated
+                              ? <Button
+                                  color="info"
+                                  className="donate-btn"
+                                  id={request.id}
+                                  value={request.price}
+                                  onClick={(event) => {
+                                    props.fullFillRequest(event.target.id, event.target.value)
+                                  }}
+                                >
+                              Donate Now</Button>
+                              : null
+                            }
+                        </div>
+                      </div>
+                        <div className="body-card">
+                          <CardText>Story: { request.story }</CardText>
                         </div>
                       </Col>
                     )
@@ -102,24 +101,24 @@ const Explore = (props) => {
                       status = "Live"
                     }
 
-                    return (
-                      <Col sm="12" md="6">
-                        <div className="custom-card">
-                          <div className="header-card">
-                            <img width="130px" height="130px" src={request.image} alt="Card cap" className="card-image" />
-                            <div className="header-card-content">
-                              <p className="name">Id: {request.id.toString()}</p>
-                              <p className="name">Name: {request.name}</p>
-                              <p className="name">Amount: Eth{window.web3.utils.fromWei(request.raiseGoal.toString(), 'Ether')} </p>
-                              <p className="name">Amount Raised: Eth{request.ammountRaised.toString()}</p>
-                              <p className="name">Status: {status}</p>
-                              <p> Visit The Requests For Fund Raising</p>
-                            </div>
+                  return(
+                    <Col sm="12" md="6">
+                      <div className="custom-card">
+                        <div className="header-card">
+                          <img width="130px" height="130px" src={ request.image } alt="Card cap" className="card-image"/>
+                          <div className="header-card-content">
+                            <p className="name">Id: { request.id.toString() }</p>
+                            <p className="name">Name: { request.name }</p>
+                            <p className="name">Amount: Eth { window.web3.utils.fromWei(request.raiseGoal.toString(), 'Ether') } </p>
+                            <p className="name">Amount Raised: Eth { request.ammountRaised.toString() }</p>
+                            <p className="name">Status: { status }</p>
+                            <p> Visit The Requests For Fund Raising</p>
                           </div>
                           <div className="body-card">
                             <CardText>Story: {request.cause}</CardText>
                           </div>
                         </div>
+                      </div>
                       </Col>
                     )
                   })

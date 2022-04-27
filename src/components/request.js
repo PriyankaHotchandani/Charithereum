@@ -36,8 +36,8 @@ class CharityRequest extends Component {
     // const charityNetworkData = CharityContract.networks[networkId]
 
     // if(networkData){
-      const donation = web3.eth.Contract(Donation, "0x9Df79655A58C3EdF5E30aE8a95d7709A0F6548e4")
-      const charity = web3.eth.Contract(CharityContract, "0x1d44FC6B66f3396d60f7249DE620D8c9Ef171B21")
+      const donation = web3.eth.Contract(Donation, "0xBFe4B96fca08a7Bcd419fEc2d32E7Bd0dd79a8fd")
+      const charity = web3.eth.Contract(CharityContract, "0x7B60447Edb12e21700aA875ED59CA27D1f6261F8")
       this.setState({ donation })
       this.setState({ charity })
 
